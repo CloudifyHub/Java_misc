@@ -315,7 +315,7 @@ public class Main {
     }
 
     public static void forLoops(){
-        for(int i = 0; i<=1; i++){
+        for(int i = 0; i<=300; i++){
             System.out.println(i);
             //sendMsg();
             //sendData();
