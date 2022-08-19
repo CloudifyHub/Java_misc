@@ -508,6 +508,7 @@ public class Main {
 
         String toTelephone = "233546640723";
         String[] arrayList = {"BECE", "WASSCE", "MOH", "SHS"};
+        String[] moneyList = {"BECE", "WASSCE", "MOH", "SHS"};
 
         Random random = new Random();
         int q = random.nextInt(arrayList.length);
