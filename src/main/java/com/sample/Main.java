@@ -68,7 +68,7 @@ public class Main {
         //randomValues();
         //switches();
         //whileLoops();
-        forLoops();
+       forLoops();
         //arrays();
         //arraysAd();
         //twoDArrays();
@@ -315,7 +315,11 @@ public class Main {
     }
 
     public static void forLoops(){
+<<<<<<< HEAD
         for(int i = 0; i<=300; i++){
+=======
+        for(int i = 0; i<=200; i++){
+>>>>>>> 880a6c9317869e630bc5c16b33d7af9f88a4ec9a
             System.out.println(i);
             //sendMsg();
             //sendData();
@@ -502,24 +506,42 @@ public class Main {
 
     public static void stressTest()
     {
-        Random random = new Random();
-        long q = random.nextLong();
-        String toTelephone = "233546640723";
 
+        String uuid = UUID.randomUUID().toString();
+        System.out.println(uuid);
+
+        String toTelephone = "233546640723";
+        String[] arrayList = {"BECE", "WASSCE", "MOH", "SHS"};
+
+        Random random = new Random();
+        int q = random.nextInt(arrayList.length);
+
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("customerName", "RICHMOND");
+        requestBody.put("network", "MTN");
+        requestBody.put("accountRef", "Testing");
+        requestBody.put("paymentRef", arrayList[q]);
+        requestBody.put("amount", "70");
+        requestBody.put("transactionId", uuid);
+        requestBody.put("username", "0000000-2e57-4df3-8bb7-00000000");
+        requestBody.put("password", "00000000-6dce-4505-a0bd-00000000");
+
+//        String request1 = "{\"CustomerMobile\": "+toTelephone+",\n" +
+//                "    \"customerName\": \"RICHMOND\",\n" +
+//                "    \"network\": \"MTN\",\n" +
+//                "    \"accountRef\": \"Testing\",\n" +
+//                "    \"paymentRef\": \""+arrayList[q]+"\",\n" +
+//                "    \"amount\": \"60\",\n" +
+//                "    \"transactionId\":\""+uuid+"\",\n" +
+//                "    \"username\": \"0000000-2e57-4df3-8bb7-00000000\",\n" +
+//                "    \"password\": \"00000000-6dce-4505-a0bd-00000000\"}";
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\"CustomerMobile\": "+toTelephone+",\n" +
-                "    \"customerName\": \"RICHMOND\",\n" +
-                "    \"network\": \"MTN\",\n" +
-                "    \"accountRef\": \"Testing\",\n" +
-                "    \"paymentRef\": \"WASSCE\",\n" +
-                "    \"amount\": \"60\",\n" +
-                "    \"transactionId\":"+q+",\n" +
-                "    \"username\": \"cf041b6b-2e57-4df3-8bb7-362ccc94064d\",\n" +
-                "    \"password\": \"5a0bcf9a-6dce-4505-a0bd-29c2928430fe\"}" +
-                "");
+        RequestBody body = RequestBody.create(mediaType, requestBody);
+
+        System.out.println("REQUEST : "+ requestBody);
         Request request = new Request.Builder()
                 .url("https://eywik85fpyrijct-nonproduction1.adb.uk-london-1.oraclecloudapps.com/ords/mawulepe/momo/test/callback")
                 .method("POST", body)
