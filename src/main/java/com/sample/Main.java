@@ -539,7 +539,9 @@ public class Main {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, requestBody);
+        //RequestBody body = RequestBody.create(mediaType, requestBody);
+        requestBody.toString();
+        RequestBody body = RequestBody.create(mediaType,requestBody.toString() );
 
         System.out.println("REQUEST : "+ requestBody);
         Request request = new Request.Builder()
