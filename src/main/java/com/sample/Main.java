@@ -315,7 +315,11 @@ public class Main {
     }
 
     public static void forLoops(){
+<<<<<<< HEAD
+        for(int i = 0; i<=300; i++){
+=======
         for(int i = 0; i<=200; i++){
+>>>>>>> 880a6c9317869e630bc5c16b33d7af9f88a4ec9a
             System.out.println(i);
             //sendMsg();
             //sendData();
@@ -536,7 +540,13 @@ public class Main {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         MediaType mediaType = MediaType.parse("application/json");
+<<<<<<< HEAD
+        //RequestBody body = RequestBody.create(mediaType, requestBody);
+        requestBody.toString();
+        RequestBody body = RequestBody.create(mediaType,requestBody.toString() );
+=======
         RequestBody body = RequestBody.create(mediaType, requestBody.toString());
+>>>>>>> 1626f02f41d275ebe2f022186ffde2e453c76a4a
 
         System.out.println("REQUEST : "+ requestBody);
         Request request = new Request.Builder()
