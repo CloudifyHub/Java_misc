@@ -513,25 +513,28 @@ public class Main {
         Random random = new Random();
         int q = random.nextInt(arrayList.length);
 
-//        JSONObject requestBody = new JSONObject();
-//        requestBody.put("customerName", "RICHMOND");
-//        requestBody.put("network", "MTN");
-//        requestBody.put("accountRef", "Testing");
-//        requestBody.put("paymentRef", arrayList[q]);
-//        requestBody.put("amount", "70");
-//        requestBody.put("transactionId", uuid);
-//        requestBody.put("username", "0000000-2e57-4df3-8bb7-00000000");
-//        requestBody.put("password", "00000000-6dce-4505-a0bd-00000000");
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("customerName", "RICHMOND");
+        requestBody.put("CustomerMobile", "233546640723");
+        requestBody.put("network", "MTN");
+        requestBody.put("accountRef", "Testing");
+        requestBody.put("paymentRef", arrayList[q]);
+        requestBody.put("amount", "70");
+        requestBody.put("transactionId", uuid);
+        requestBody.put("username", "0000000-2e57-4df3-8bb7-00000000");
+        requestBody.put("password", "00000000-6dce-4505-a0bd-00000000");
 
-        String requestBody = "{\"CustomerMobile\": "+toTelephone+",\n" +
-                "    \"customerName\": \"RICHMOND\",\n" +
-                "    \"network\": \"MTN\",\n" +
-                "    \"accountRef\": \"Testing\",\n" +
-                "    \"paymentRef\": \""+arrayList[q]+"\",\n" +
-                "    \"amount\": \"60\",\n" +
-                "    \"transactionId\":\""+uuid+"\",\n" +
-                "    \"username\": \"0000000-2e57-4df3-8bb7-00000000\",\n" +
-                "    \"password\": \"00000000-6dce-4505-a0bd-00000000\"}";
+
+//        String requestBody = "{\"CustomerMobile\": "+toTelephone+",\n" +
+//                "    \"customerName\": \"RICHMOND\",\n" +
+//                "    \"network\": \"MTN\",\n" +
+//                "    \"accountRef\": \"Testing\",\n" +
+//                "    \"paymentRef\": \""+arrayList[q]+"\",\n" +
+//                "    \"amount\": \"60\",\n" +
+//                "    \"transactionId\":\""+uuid+"\",\n" +
+//                "    \"username\": \"0000000-2e57-4df3-8bb7-00000000\",\n" +
+//                "    \"password\": \"00000000-6dce-4505-a0bd-00000000\"}";
+
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -579,5 +582,3 @@ public class Main {
 
 
 }
-
-
