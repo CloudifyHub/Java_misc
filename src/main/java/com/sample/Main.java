@@ -508,11 +508,11 @@ public class Main {
 
         String toTelephone = "233546640723";
         String[] arrayList = {"BECE", "WASSCE", "MOH", "SHS"};
-        String[] momeyList = {"50.50", "70.70", "101", "71.20"};
+        String[] moneyList = {"50.50", "70.70", "101", "71.20"};
 
         Random random = new Random();
         int q = random.nextInt(arrayList.length);
-        int cash = random.nextInt(momeyList.length);
+        int cash = random.nextInt(moneyList.length);
 
         JSONObject requestBody = new JSONObject();
         requestBody.put("customerName", "RICHMOND");
@@ -520,7 +520,7 @@ public class Main {
         requestBody.put("network", "MTN");
         requestBody.put("accountRef", "Testing");
         requestBody.put("paymentRef", arrayList[q]);
-        requestBody.put("amount", momeyList[cash]);
+        requestBody.put("amount", moneyList[cash]);
         requestBody.put("transactionId", uuid);
         requestBody.put("username", "0000000-2e57-4df3-8bb7-00000000");
         requestBody.put("password", "00000000-6dce-4505-a0bd-00000000");
